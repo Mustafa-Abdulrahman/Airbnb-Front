@@ -1,0 +1,213 @@
+<!-- <section>
+  <div class="cartona">
+    <div class="box" *ngFor="let item of allBooking">
+      <div class="img">
+        <img [src]="item.propImage" alt="" />
+      </div>
+      <div class="content">
+        <strong
+          [ngClass]="{confirmed: item.bookingStatus == 2, pending: item.bookingStatus == 0,cancel: item.bookingStatus == 3,Payment: item.bookingStatus == 1, }"
+          >{{
+            item.bookingStatus == 2
+              ? "Confirmed"
+              : item.bookingStatus == 3
+              ? "Canceled"
+              : item.bookingStatus == 1
+              ? "WaitForPayment"
+              : "Pending"
+          }}</strong
+        >
+        <h2>{{ item.propTitle }}</h2>
+        <p>Total Price: {{ item.totalPrice }}</p>
+        <div class="date">
+          <span
+            >Form:
+            {{ item.checkInDate.slice(0, item.checkInDate.indexOf("T")) }}</span
+          >
+          <br />
+          <span
+            >To:
+            {{
+              item.checkOutDate.slice(0, item.checkInDate.indexOf("T"))
+            }}</span
+          >
+        </div>
+        <div class="btns">
+          <button [routerLink]="['/PropDetails', item.id]">
+            <i class="fa-solid fa-eye"></i>
+          </button>
+          <button
+            (click)="pay(item.totalPrice, item.id)"
+            *ngIf="item.bookingStatus == 1"
+            class="payment"
+          >
+            <i class="fa-solid fa-cart-shopping"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- <div class="container my-trips-container">
+  <div class="title text-center mb-4">MY TRIPS</div>
+
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover">
+      <thead class="thead-light">
+        <tr>
+          <th (click)="sortData('propertyName')">Property Name</th>
+          <th (click)="sortData('hostName')">Host Name</th>
+          <th (click)="sortData('checkInDate')">Check In Date</th>
+          <th (click)="sortData('checkOutDate')">Check Out Date</th>
+          <th (click)="sortData('totalPrice')">Total Price</th>
+          <th (click)="sortData('status')">Booking Status</th>
+         
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of allBooking | paginate: { itemsPerPage: 10, currentPage: p }">
+       
+          <td>
+            <i class="fas fa-building icon-green"></i> {{ row.propTitle }}
+          </td>
+          <td>
+            <i class="fas fa-user-circle icon-blue"></i> {{ row.id }}
+          </td>
+          <td>
+            <i class="far fa-calendar-alt icon-checkin"></i> {{ row.checkInDate | date : "dd-MM-yyyy" }}
+          </td>
+          <td>
+            <i class="far fa-calendar-check icon-checkout"></i> {{ row.checkOutDate | date : "dd-MM-yyyy" }}
+          </td>
+          <td>
+            <i class="fa-solid fa-sack-dollar fs-5 icon-price" style="color: #006110"></i> {{ row.totalPrice }}
+          </td>
+          <td [style.color]="row.bookingStatus ? 'green' : 'red'">
+            <i [class]="row.bookingStatus ? 'fas fa-check-circle' : 'fas fa-times-circle'"></i> 
+            {{ row.bookingStatus ? "Available" : "Not Available" }}
+          </td>
+         
+        </tr>
+      </tbody>
+    </table>
+
+    <pagination-controls class="d-flex justify-content-center pag" (pageChange)="p = $event"></pagination-controls>
+  </div>
+</div> -->
+
+<section>
+  <div class="cartona">
+    <table>
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Status</th>
+          <th>Title</th>
+          <th>Total Price</th>
+          <th>Check-In Date</th>
+          <th>Check-Out Date</th>
+          <th>Property ID</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="
+            let item of allBooking
+              | paginate : { itemsPerPage: 5, currentPage: p }
+          "
+        >
+          <td>
+            <img [src]="item.propImage" alt="" />
+          </td>
+          <td>
+            <strong
+              [ngClass]="{
+                confirmed: item.bookingStatus == 2,
+                pending: item.bookingStatus == 0,
+                cancel: item.bookingStatus == 3,
+                Payment: item.bookingStatus == 1
+              }"
+            >
+              {{
+                item.bookingStatus == 2
+                  ? "Confirmed"
+                  : item.bookingStatus == 3
+                  ? "Canceled"
+                  : item.bookingStatus == 1
+                  ? "WaitForPayment"
+                  : "Pending"
+              }}
+            </strong>
+          </td>
+          <td>{{ item.propTitle }}</td>
+          <td>{{ item.totalPrice }}</td>
+          <td>
+            {{ item.checkInDate.slice(0, item.checkInDate.indexOf("T")) }}
+          </td>
+          <td>
+            {{ item.checkOutDate.slice(0, item.checkInDate.indexOf("T")) }}
+          </td>
+          <td>{{ item.propertyId }}</td>
+          <td>
+            <button [routerLink]="['/PropDetails', item.propertyId]">
+              <i class="fa-solid fa-eye"></i>
+            </button>
+            <button
+              (click)="pay(item.totalPrice, item.id)"
+              *ngIf="item.bookingStatus == 1"
+              class="payment"
+            >
+              <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+            <!-- <button (click)="deleteBooking(item.id)" *ngIf="item.bookingStatus !== 3" class="cancel">
+              <i class="fa-solid fa-times cancel"></i>
+            </button> -->
+            <button
+              class="btn btn-danger"
+              (click)="openConfirmationDialog(item.id)"
+            >
+              <i class="fa-solid fa-trash cancel"></i> Delete
+            </button>
+            <button
+              *ngIf="item.bookingStatus == 2"
+              (click)="ShowPopUp(item.id, item.propertyId)"
+            >
+              <i class="fa-solid fa-comments"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="pagination-container">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+  <!-- Confirmation Dialog Component -->
+  <div class="confirmation-overlay" *ngIf="showConfirmationDialog">
+    <app-confirmation-dialog
+      [message]="'Are you sure you want to delete this booking?'"
+      (confirmed)="deleteBooking($event)"
+    ></app-confirmation-dialog>
+  </div>
+</section>
+<div class="popUp" [ngClass]="{ active: popUpStatus }">
+  <h1 class="close" (click)="popUpStatus = false">
+    <i class="fa-solid fa-xmark"></i>
+  </h1>
+  <div class="content">
+    <p>Rate From 1 To 10</p>
+    <input type="range" #rating1 max="10" />
+    <textarea #comment></textarea>
+    <input
+      type="submit"
+      (click)="
+        AddReview(itemId, {
+          rating: rating1.value,
+          propertyId: propId,
+          comment: comment.value
+        })
+      "
+    />
+  </div>
+</div>

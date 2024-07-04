@@ -1,0 +1,50 @@
+<div class="signin-form sign">
+  <div class="cartona">
+    <div class="content">
+      <h2>Welcome</h2>
+      <p>
+        Hey there! Ready to log in? Just enter your username and password below.
+        Let's go!
+      </p>
+      <div class="LetsGo">
+        <span>Go</span>
+      </div>
+      <!-- Form -->
+      <form [formGroup]="loginForm" novalidate (ngSubmit)="OnSubmit()">
+        <div class="div-sec">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            placeholder="name@example.com"
+            formControlName="email"
+          />
+        </div>
+        <div class="div-sec">
+          <label for="pass">Password</label>
+          <input
+            formControlName="password"
+            type="password"
+            id="pass"
+            name="pass"
+            placeholder="Password"
+          />
+          <span></span>
+        </div>
+        <div class="div-two">
+          <!-- <div class="remember">
+            <input type="checkbox" id="rem-me" />
+            <label for="rem-me">Remember Me</label>
+          </div> -->
+          <!-- <a href="#">Forget Password?</a> -->
+        </div>
+        <input type="submit" value="Let's Go" />
+        <div class="sign-up">
+          <span>Don't have an account? </span
+          ><a routerLink="/signup">Sign Up Now</a>
+        </div>
+      </form>
+      <!-- Form -->
+    </div>
+  </div>
+</div>

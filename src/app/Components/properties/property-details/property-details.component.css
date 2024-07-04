@@ -1,0 +1,153 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+.flex {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.2rem;
+}
+.padding {
+  padding: 1.5rem 0;
+  border-bottom: 2px solid var(--secound-color);
+}
+/* ---------------------------------------- */
+
+.PropertiesImages .cartona {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+.PropertiesImages .cartona .img:first-of-type {
+  grid-row: span 2;
+  grid-column: span 2;
+  overflow: hidden;
+  max-height: 376px;
+}
+.PropertiesImages .cartona .img:not(:first-of-type) {
+  max-height: 180px;
+  overflow: hidden;
+}
+.PropertiesImages .cartona .img img {
+  position: relative;
+
+  vertical-align: top;
+}
+/* ---------------------------------------- */
+.devide .cartona {
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.2rem;
+}
+.devide .cartona .AppoinmentAvailable {
+  flex: 2;
+}
+.devide .cartona .mainData {
+  flex: 6;
+}
+/* ---------------------------------------- */
+.UserInfo {
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.2rem;
+}
+.UserInfo .img {
+  width: 80px;
+  height: 80%;
+  border-radius: 100px;
+  overflow: hidden;
+}
+/* ---------------------------------------- */
+.AppoinmentAvailable {
+  max-height: 650px;
+  overflow: auto;
+}
+.AppoinmentAvailable .box .condition {
+  padding: 0.6rem;
+  background-color: var(--main-color);
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  color: white;
+}
+.AppoinmentAvailable .box .condition .date {
+  margin-bottom: 0.6rem;
+}
+.AppoinmentAvailable .box .condition p {
+  margin-bottom: 0.6rem;
+}
+.AppoinmentAvailable .box .condition button {
+  padding: 0.6rem;
+  width: 100%;
+}
+/* ---------------------------------------- */
+.reviews {
+  justify-content: center;
+}
+.reviews .box {
+  padding: 0.8rem;
+  border: 2px solid var(--secound-color);
+  border-radius: 8px;
+}
+.reviews .box .userData {
+  padding-bottom: 1rem;
+  align-items: center;
+
+  border-bottom: 2px solid var(--secound-color);
+  justify-content: flex-start;
+}
+.reviews .box .userData .img {
+  width: 60px;
+}
+.reviews .box .comment {
+  text-align: center;
+  padding-top: 1rem;
+}
+/* ---------------------------------------- */
+
+@media (min-width: 767px) {
+}
+@media (max-width: 768px) {
+  .PropertiesImages .cartona .img:first-of-type {
+    grid-row: span 1;
+    grid-column: span 1;
+  }
+  .flex {
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .devide .cartona .AppoinmentAvailable {
+    width: 100%;
+  }
+  .devide .cartona .mainData {
+    width: 100%;
+  }
+  .reviews .box {
+    width: 100%;
+  }
+}
+@media (max-width: 992px) {
+  .PropertiesImages .cartona .img:first-of-type {
+    grid-row: span 1;
+    grid-column: span 1;
+  }
+  .flex {
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .devide .cartona .AppoinmentAvailable {
+    width: 100%;
+  }
+  .devide .cartona .mainData {
+    width: 100%;
+  }
+  .reviews .box {
+    width: 100%;
+  }
+}

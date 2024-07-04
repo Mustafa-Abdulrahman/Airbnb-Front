@@ -1,0 +1,72 @@
+/* Import Toastr CSS */
+@import "../node_modules/ngx-toastr/toastr.css";
+
+:root {
+  --main-color: #151515;
+  --hover-main-color: #303030;
+  --secound-color: #eee;
+  --third-color: #f6dcac;
+  --forth-color: #feae6f;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: 0.25s;
+}
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.5;
+  font-size: 16px;
+}
+.cartona {
+  width: 85%;
+  margin: 0 auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::before,
+::after {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+}
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+.container {
+  margin: auto;
+  padding: 0;
+}
+section {
+  padding: 3em 1em;
+}
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}

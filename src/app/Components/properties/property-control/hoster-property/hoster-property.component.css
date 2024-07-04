@@ -1,0 +1,92 @@
+.cartona .addProp {
+  padding: 1rem;
+  width: 100%;
+  outline: none;
+  border: none;
+  color: var(--main-color);
+  background-color: var(--secound-color);
+}
+.cartona .addProp:hover {
+  color: var(--secound-color);
+  background-color: var(--main-color);
+}
+
+.cartona .boxContainer {
+  margin-top: 4rem;
+}
+.cartona .boxContainer .box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  padding: 0.6rem 1.2rem;
+  background-color: var(--secound-color);
+}
+.cartona .boxContainer .box .img {
+  width: 80px;
+}
+.cartona .boxContainer .box .img img {
+}
+.cartona .boxContainer .box ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.7rem;
+  flex: 10;
+}
+.cartona .boxContainer .box ul li {
+  flex: 3;
+}
+.cartona .boxContainer .box ul li.btn {
+  flex: 1;
+}
+.cartona .boxContainer .box ul li button {
+  padding: 0.6rem 1.2rem;
+}
+.cartona .boxContainer .box ul li button.delete {
+  background-color: red;
+  color: white;
+}
+.cartona .boxContainer .box ul li button.update {
+  background-color: green;
+  color: white;
+}
+@media (max-width: 992px) {
+  .cartona {
+    width: 100%;
+  }
+  .cartona .boxContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cartona .boxContainer .box {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .cartona .boxContainer .box .img {
+    width: 100%;
+    margin: 1rem auto;
+  }
+  .cartona .boxContainer .box .img img {
+    width: 100%;
+  }
+
+  .cartona .boxContainer .box ul {
+    width: 100%;
+    flex-flow: column;
+  }
+  .cartona .boxContainer .box ul li {
+    width: 100%;
+    text-align: center;
+  }
+  .cartona .boxContainer .box ul li button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,114 @@
+<section *ngIf="PropFullData">
+  <div class="cartona">
+    <h2 class="head">
+      Residence in the {{ PropFullData.name }} of its owner,
+      {{ PropFullData.userName }}
+    </h2>
+  </div>
+  <!-- ------------------------------------------------------------------- -->
+  <section class="PropertiesImages">
+    <div class="cartona">
+      <div class="img" *ngFor="let item of PropImgsUrl">
+        <img [src]="item.imageUrl" alt="" />
+      </div>
+    </div>
+  </section>
+  <!-- ------------------------------------------------------------------- -->
+  <section class="devide">
+    <div class="cartona flex">
+      <!--  -->
+
+      <!--  -->
+      <div class="mainData">
+        <!-- ------------------ -->
+        <div class="PropertyData padding">
+          <h3>
+            <strong
+              >{{ PropFullData.cityName }}, {{ PropFullData.adress }}</strong
+            >, {{ PropFullData.categoryName }}
+          </h3>
+          <span>{{ PropFullData.numberOfGuest }} Guest Number</span>
+          <span>{{ PropFullData.numberOfBathrooms }} Bathrooms,</span> &nbsp;
+          <span>{{ PropFullData.numberOfBedrooms }} Bedrooms, </span>&nbsp;
+          <span>{{ PropFullData.beds }} Beds, </span>&nbsp;
+        </div>
+        <!-- ------------------ -->
+        <div class="UserInfo flex padding">
+          <div class="img"><img [src]="PropFullData.userImage" alt="" /></div>
+          <h3>Hoster: {{ PropFullData.userName }}</h3>
+        </div>
+        <!-- ------------------ -->
+        <div class="amentities padding">
+          <h2>Amenteties</h2>
+          <div class="box" *ngFor="let item of PropAmentity">
+            <h3>
+              <strong>{{ item.name }}</strong>
+            </h3>
+            <p>{{ item.description }}</p>
+          </div>
+        </div>
+        <!-- ------------------ -->
+        <div class="description padding">
+          <h2>Description</h2>
+          <p>{{ PropFullData.description }}</p>
+        </div>
+        <!-- ------------------ -->
+        <div class="Rules padding">
+          <h2>Home Rules</h2>
+
+          <p>- Arrive Time {{ PropFullData.checkIn }}</p>
+          <p>- Check out {{ PropFullData.checkOut }}</p>
+          <p>- {{ PropFullData.numberOfGuest }} A Maximum</p>
+          <p>- Pets: {{ PropFullData.pets ? "Allow" : "Not Allow" }}</p>
+          <p>
+            - Take Photos: {{ PropFullData.takePhotos ? "Allow" : "Not Allow" }}
+          </p>
+        </div>
+        <!-- ------------------ -->
+
+        <!-- ------------------ -->
+        <!-- ------------------ -->
+        <!-- ------------------ -->
+        <!-- ------------------ -->
+      </div>
+      <!-- AppoinmentAvailable -->
+      <div class="AppoinmentAvailable padding">
+        <div class="box" *ngFor="let item of PropFullData.appoinmentAvaiable">
+          <div class="condition" *ngIf="item.isAvailable">
+            <div class="date">
+              <span
+                ><strong>From:</strong>
+                {{ item.from.slice(0, item.from.indexOf("T")) }}</span
+              >
+              <br />
+              <span
+                ><strong>To: </strong>
+                {{ item.to.slice(0, item.from.indexOf("T")) }}</span
+              >
+            </div>
+            <p>Price Per Night: {{ item.pricePerNight }}</p>
+            <p>Total Price: {{ item.totalProice }}</p>
+            <button (click)="AddBooking(item)" [disabled]="UserRole != 'User'">
+              Book Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="cartona">
+      <div class="reviews padding flex">
+        <div class="box" *ngFor="let item of PropReviews">
+          <div class="userData flex">
+            <div class="img">
+              <img [src]="item.reviewUserImage" alt="" />
+            </div>
+            <p>{{ item.reviewUserName }}</p>
+          </div>
+          <div class="comment">{{ item.reviewComment }}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>

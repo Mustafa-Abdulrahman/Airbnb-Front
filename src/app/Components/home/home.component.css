@@ -1,0 +1,144 @@
+/* ----------------------------------- end bolg--------------------- */
+/*========== APP ==========*/
+.app {
+  background-color: #eee;
+}
+.app .cartona {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.app .app__data {
+  width: 50%;
+}
+.app .app__data img {
+  width: 100px;
+}
+.app .img {
+  text-align: center;
+  width: 50%;
+}
+.app .img img {
+  vertical-align: middle;
+}
+
+@media (max-width: 992px) {
+  .app .cartona {
+    flex-flow: column;
+  }
+  .app .app__data {
+    width: 100%;
+  }
+  .app .img {
+    text-align: center;
+    width: 100%;
+  }
+}
+/* Banner */
+.banner {
+  text-align: center;
+  background-image: linear-gradient(
+      rgba(16, 19, 36, 0.742),
+      rgba(16, 19, 36, 0.7)
+    ),
+    url("../../../assets/banner.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  height: 40vh;
+  color: white;
+}
+
+.banner h4 {
+  margin-bottom: 1em;
+}
+.banner h2 {
+  margin-bottom: 16px;
+  font-size: 2.5em;
+}
+.banner h2 span {
+  color: rgb(255, 0, 0);
+}
+.banner .normal {
+  color: black(255, 0, 0);
+  padding: 12px;
+}
+/* Banner --------------------------------------------------------------------------------------------------------- */
+
+/* Banner Two --------------------------------------------------------------------------------------------------------- */
+
+.banner2 .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-flow: wrap;
+  gap: 1rem;
+}
+.banner2 .container .box,
+.banner2 .container .box2 {
+  min-width: calc((100% - 16px) / 2);
+  height: 40vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-flow: column;
+  padding: 32px;
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+.banner2 .container .box2 {
+  min-width: calc((100% - 32px) / 3);
+}
+.banner2 .container .box:nth-child(1) {
+  background-image: url("../../../assets/a1.webp");
+}
+.banner2 .container .box:nth-child(2) {
+  background-image: url("../../../assets/a2.webp");
+}
+.banner2 .container .box:nth-child(3) {
+  background-image: url("../../../assets/a3.webp");
+}
+.banner2 .container .box:nth-child(4) {
+  background-image: url("../../../assets/a4.jpeg");
+}
+
+.banner2 .container .box:nth-child(5) {
+  background-image: url("../../../assets/a5.webp");
+}
+
+.banner2 .container .box h4 {
+  font-size: 20px;
+  font-weight: normal;
+}
+.banner2 .container .box h2 {
+  font-size: 34px;
+}
+
+.banner2 .container .box button {
+  margin-top: 16px;
+  border-radius: 0;
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
+  padding: 6px;
+}
+.banner2 .container .box button:hover {
+  background-color: var(--main-color);
+}
+@media (max-width: 992px) {
+  .banner2 .responsive {
+    flex-flow: column;
+    width: 100% !important;
+  }
+
+  .banner2 .container .box {
+    width: 100%;
+  }
+}

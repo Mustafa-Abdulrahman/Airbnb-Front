@@ -1,0 +1,130 @@
+.cartona {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  padding: 3rem 1rem;
+}
+h3 {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.property-form {
+  width: 80%;
+  padding: 2rem;
+  border-radius: 4px;
+  border: 2px solid #2b34991a;
+  box-shadow: 0 0 20px -3px rgba(98, 98, 98, 0.164);
+  margin: 0 auto;
+  background-color: var(--secound-color);
+}
+.property-form .form-group {
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.property-form .form-group input,
+textarea,
+select {
+  width: 100%;
+  padding: 0.5rem;
+  outline: none;
+  border: none;
+}
+.property-form .form-group button {
+  padding: 0.6rem 1.2rem;
+  margin: 0 auto;
+}
+.property-form .form-group:last-of-type {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .cartona {
+    padding: 1rem;
+  }
+  .property-form {
+    width: 85%;
+  }
+}
+@media (max-width: 500px) {
+  .cartona {
+    padding: 2rem 0.2rem;
+  }
+  .property-form {
+    width: 100%;
+  }
+}
+
+.cartona .boxContainer {
+  width: 80%;
+}
+.cartona .boxContainer .box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  padding: 0.6rem 1.2rem;
+  background-color: var(--secound-color);
+}
+.cartona .boxContainer .box .img {
+  width: 80px;
+}
+.cartona .boxContainer .box .img img {
+}
+.cartona .boxContainer .box ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.7rem;
+  flex: 10;
+}
+.cartona .boxContainer .box ul li {
+}
+.cartona .boxContainer .box ul li button {
+  padding: 0.6rem 1.2rem;
+}
+.cartona .boxContainer .box ul li button.delete {
+  background-color: red;
+  color: white;
+}
+.cartona .boxContainer .box ul li button.update {
+  background-color: green;
+  color: white;
+}
+
+@media (max-width: 992px) {
+  .cartona {
+    width: 100%;
+    padding: 1rem;
+  }
+  .property-form {
+    width: 100%;
+  }
+  .cartona .boxContainer {
+    width: 100%;
+  }
+  section {
+    padding: 0;
+  }
+}
+@media (max-width: 768px) {
+  .cartona .boxContainer .box {
+    flex-flow: column;
+  }
+  .cartona .boxContainer .box .img {
+    width: 100%;
+    margin: 1rem auto;
+  }
+  .cartona .boxContainer .box .img img {
+    width: 100%;
+  }
+
+  .cartona .boxContainer .box ul {
+    width: 100%;
+  }
+}

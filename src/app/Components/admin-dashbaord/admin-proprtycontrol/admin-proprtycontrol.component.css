@@ -1,0 +1,166 @@
+/* start paggination-buttons  */
+.numberOfPages {
+  padding-top: 0 !important;
+  text-align: center;
+}
+.numberOfPages div {
+  width: fit-content;
+  margin: 0 auto;
+}
+.paggination-buttons {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  text-align: center;
+}
+.paggination-buttons li {
+  text-align: center;
+  padding: 1rem 1.7rem;
+  color: var(--secound-color);
+  font-weight: bold;
+  background-color: var(--main-color);
+  cursor: pointer;
+}
+.paggination-buttons li:hover {
+  background-color: var(--hover-main-color);
+}
+.paggination-buttons li.active {
+  color: var(--main-color);
+  background-color: var(--secound-color);
+}
+/* End paggination-buttons  */
+@media (min-width: 768px) {
+  .property .container {
+    width: 100%;
+  }
+  .filtration .cartona .sameStyleFilter {
+    padding: 0.5rem 0.9rem;
+    width: 100%;
+  }
+  .paggination-buttons {
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .filtration .cartona {
+    flex-flow: column;
+    width: 100%;
+  }
+  .filtration .cartona .sameStyleFilter {
+    width: 100%;
+  }
+  .paggination-buttons {
+    width: 100%;
+  }
+}
+@media (min-width: 992px) {
+  .property .container {
+    width: 960px;
+  }
+  .filtration .cartona {
+    width: 960px;
+  }
+  .paggination-buttons {
+    width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .property .container {
+    width: 1140px;
+  }
+  .filtration .cartona {
+    width: 1140px;
+  }
+  .paggination-buttons {
+    width: 1140px;
+  }
+}
+
+/* ------------------  -------------------------- category*/
+.category-nav-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  max-width: 992px;
+}
+
+.category-nav {
+  display: flex;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  white-space: nowrap;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.category-item {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 30px;
+  cursor: pointer;
+}
+
+.category-item img {
+  width: 40px;
+  height: 40px;
+}
+
+.category-item p {
+  margin: 5px 0 0;
+  font-size: 14px;
+}
+
+.scroll-btn {
+  background: white;
+  color: rgb(140, 139, 139);
+  border-radius: 50px;
+  border: solid;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  transition: box-shadow 0.3s ease;
+}
+.scroll-btn:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+}
+.scroll-btn.left {
+  left: 2%;
+}
+
+.scroll-btn.right {
+  right: 2%;
+}
+.scroll-btn.end {
+  background-color: red;
+}
+.btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+.confirm {
+  background-color: green;
+  padding: 0.7rem 0;
+  display: block;
+  width: 100%;
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: white;
+}
+.Cancel {
+  background-color: red;
+  padding: 0.7rem 0;
+  display: block;
+  width: 100%;
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: white;
+}

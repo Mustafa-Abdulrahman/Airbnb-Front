@@ -1,0 +1,107 @@
+<nav>
+  <div class="cartona">
+    <svg
+      (click)="showNavBar()"
+      class="Showlist"
+      xmlns="http://www.w3.org/2000/svg"
+      x="0px"
+      y="0px"
+      width="100"
+      height="100"
+      viewBox="0 0 50 50"
+    >
+      <path
+        d="M 2 9 L 2 11 L 48 11 L 48 9 L 2 9 z M 2 24 L 2 26 L 48 26 L 48 24 L 2 24 z M 2 39 L 2 41 L 48 41 L 48 39 L 2 39 z"
+      ></path>
+    </svg>
+    <!--  -->
+    <div class="logo">
+      <a routerLink="/home">
+        <img src="../../../assets/Airbnb-logo-2048x1152.png" alt=""
+      /></a>
+    </div>
+    <div class="wrap" [ngClass]="{ active: navBarStatus === true }">
+      <svg
+        (click)="closeNavBar()"
+        class="close"
+        xmlns="http://www.w3.org/2000/svg"
+        x="0px"
+        y="0px"
+        width="100"
+        height="100"
+        viewBox="0 0 50 50"
+      >
+        <path
+          d="M 40.783203 7.2714844 A 2.0002 2.0002 0 0 0 39.386719 7.8867188 L 25.050781 22.222656 L 10.714844 7.8867188 A 2.0002 2.0002 0 0 0 9.2792969 7.2792969 A 2.0002 2.0002 0 0 0 7.8867188 10.714844 L 22.222656 25.050781 L 7.8867188 39.386719 A 2.0002 2.0002 0 1 0 10.714844 42.214844 L 25.050781 27.878906 L 39.386719 42.214844 A 2.0002 2.0002 0 1 0 42.214844 39.386719 L 27.878906 25.050781 L 42.214844 10.714844 A 2.0002 2.0002 0 0 0 40.783203 7.2714844 z"
+        ></path>
+      </svg>
+      <ul class="links">
+        <li>
+          <a
+            routerLink="/home"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/property"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Discover</a
+          >
+        </li>
+        <li *ngIf="userRole === 'Host'">
+          <a
+            routerLink="/hosterPropereties"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >My Properties</a
+          >
+        </li>
+        <li *ngIf="userRole === 'User'">
+          <a
+            routerLink="/alluserBooking"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >My Booking</a
+          >
+        </li>
+        <!-- Admin -->
+        <li *ngIf="userRole === 'Admin'">
+          <a
+            routerLink="/AdminDashbaord/adminPropControl"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Dashbaord</a
+          >
+        </li>
+        <!-- Admin -->
+        <li *ngIf="userRole === 'User'">
+          <a href="#" routerLinkActive="active">Online Experience</a>
+        </li>
+      </ul>
+      <div class="profile" *ngIf="!(currentUser$ | async)">
+        <button class="SignIn" routerLink="signin">Sign In</button>
+      </div>
+      <div class="Welcome" *ngIf="currentUser$ | async">
+        <p
+          style="margin: 0; text-align: center; width: 100%"
+          (click)="profileStatus = !profileStatus"
+        >
+          Welcome, {{ userName }} &nbsp;
+          <span><i class="fa-solid fa-bars"></i></span>
+        </p>
+        <ul class="userControl" [ngClass]="{ active: profileStatus }">
+          <li routerLink="/profile" (click)="profileStatus = !profileStatus">
+            Profile
+          </li>
+          <li (click)="LogOut()" (click)="profileStatus = !profileStatus">
+            Log Out
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
